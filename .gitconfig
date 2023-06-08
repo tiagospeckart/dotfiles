@@ -1,0 +1,11 @@
+[user]
+	email = 75458110+tiagospeckart@users.noreply.github.com
+	name = Tiago Martins Speckart
+[color]
+	ui = auto
+[core]
+	editor = nano
+[init]
+	defaultBranch = main
+[safe]
+	directory = /mongo
