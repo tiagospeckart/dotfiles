@@ -1,60 +1,60 @@
 # dotfiles
 
-Currently learning how to make a proper backup of my environment.
+These are my dotfiles that I use to set up my environment on a new Fedora install.
 
-## Fedora bootstrapping
+## Installation
 
-*If* git and other packages are missing
-```bash
-sudo dnf group install "Development Tools"
-sudo dnf install git
-```
+To set up a new Fedora environment with these dotfiles, follow these steps:
 
-### Cloning the repo
-
-#### Use SSH (if set up)...
+1. Perform a fresh install of Fedora.
+2. Open Terminal.
+3. Run the following commands:
 
 ```bash
-git clone git@github.com:tiagospeckart/dotfiles.git ~/.dotfiles
+# Download the setup script
+curl -o setup.sh https://raw.githubusercontent.com/tiagospeckart/dotfiles/main/setup.sh
 
+# Make the script executable
+chmod +x setup.sh
+
+# Run the setup script
+./setup.sh
 ```
 
-#### ...or use HTTPS and switch remotes later.
+This will automatically:
 
-```bash
-git clone https://github.com/tiagospeckart/dotfiles.git ~/.dotfiles
+- Install necessary packages (Git).
+- Clone the dotfiles repository.
+- Create necessary symlinks for .zshrc, .gitconfig, and .bashrc.
+- Install Zsh and oh-my-zsh.
+- Install Zsh plugins (syntax highlighting and autosuggestions).
+
+Please remember to log out and log back in to complete the setup.
+
+## Manual Steps
+
+Certain parts of the setup process are not automated and need to be done manually:
+
+### Setting the wallpaper
+
+Use the following command and replace /path/to/your/image.jpg with your desired wallpaper image.
+
+```zsh
+    gsettings set org.gnome.desktop.background picture-uri file:///path/to/your/image.jpg
 ```
 
-### Creating symlinks
+### Setting the font
 
-```bash
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-```
+Install your desired font manually.
 
-### Install software
+https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Mononoki
 
-```bash
-#TODO
-```
+# Future Improvements
 
-Fedora uses the GNOME desktop environment by default, which stores its settings in the dconf system. You can use the gsettings or dconf command-line tools to manipulate these settings. For example:
-
-### Set the wallpaper
-
-```bash
-# Set the wallpaper
-gsettings set org.gnome.desktop.background picture-uri file:///path/to/your/image.jpg #TODO
-```
-
-# TODO List
-
-- Learn how to use `dconf` or `gsettings` to record and restore system preferences and other Linux configurations.
+- Learn how to use dconf or gsettings to record and restore system preferences and other Linux configurations.
 - Organize these growing steps into multiple script files.
 - Automate symlinking and run script files with a bootstrapping tool like Dotbot.
 - Revisit the list in .zshrc or .bashrc to customize the shell.
 - Make a checklist of steps to decommission your computer before wiping your hard drive.
-- Create a bootable USB installer for Linux.
 - Integrate other cloud services into your Dotfiles process (Dropbox, Google Drive, etc.).
-- Find inspiration and examples in other Dotfiles repositories at [dotfiles.github.io](https://dotfiles.github.io).
-- And last, but not least, continue to learn and improve your Linux system administration skills.
+- Find inspiration and examples in other Dotfiles repositories at dotfiles.github.io.
