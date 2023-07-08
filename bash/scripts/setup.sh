@@ -64,5 +64,8 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 # Reminder to set wallpaper and font manually
 echo "Don't forget to manually set your wallpaper and font!"
 
+# Setup hotkeys if the system is Fedora
+source ./setup_hotkeys.sh
+
 # Print message to remind the user to log out and log back in
 echo "Please log out and log back in to complete the setup."
