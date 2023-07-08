@@ -12,7 +12,7 @@ To set up a new Fedora environment with these dotfiles, follow these steps:
 
 ```bash
 # Download the setup script
-curl -o setup.sh https://raw.githubusercontent.com/tiagospeckart/dotfiles/main/setup.sh
+curl -o setup.sh https://raw.githubusercontent.com/tiagospeckart/dotfiles/main/bash/scripts/setup.sh
 
 # Make the script executable
 chmod +x setup.sh
