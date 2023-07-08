@@ -61,11 +61,25 @@ echo "Installing Zsh plugins..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
-# Reminder to set wallpaper and font manually
-echo "Don't forget to manually set your wallpaper and font!"
+# Setup monospaced font Nerd Font
+echo "Do you want to install NerdFonts? Warning: requires downloading NerdFonts github Repository (over 1GB)"
+echo "(Default: Y/n )"
+read input
+if [ -z "$input" ] || [[ "$input" =~ ^[Yy]$ ]]; then
+    echo "Setting Mono NerdFont..."
+    source ./setup_nerdfont.sh
+elif [[ "$input" =~ ^[Nn]$ ]]; then
+    echo "Skipping NerdFonts installation."
+else
+    echo "Invalid input. Please enter Y (or press enter) to install NerdFonts or N to skip the installation."
+fi
 
 # Setup hotkeys if the system is Fedora
+echo "Setting Terminal hotkey to be Ctrl+Alt+T..."
 source ./setup_hotkeys.sh
+
+# Reminder to set wallpaper and font manually
+echo "Don't forget to manually set your wallpaper and font!"
 
 # Print message to remind the user to log out and log back in
 echo "Please log out and log back in to complete the setup."
