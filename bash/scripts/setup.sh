@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -e
 # Install necessary packages if missing
 if ! command -v git &> /dev/null
 then
@@ -72,6 +72,16 @@ elif [[ "$input" =~ ^[Nn]$ ]]; then
     echo "Skipping NerdFonts installation."
 else
     echo "Invalid input. Please enter Y (or press enter) to install NerdFonts or N to skip the installation."
+fi
+
+# Setup Gnome Terminal color-scheme
+# Check if the environment is GNOME
+if [ "$XDG_CURRENT_DESKTOP" == "GNOME" ]; then
+    echo "Installing Base16 Eva Dim color scheme..."
+    source ./gnome-style/base16_eva-dim-256.sh
+    # After installing, set default terminal profile to be the installed profile
+    DEFAULT_SLUG=$(dconf read /org/gnome/terminal/legacy/profiles:/default | tr -d \')
+    dconf write /org/gnome/terminal/legacy/profiles:/default "'$DEFAULT_SLUG'"
 fi
 
 # Setup hotkeys if the system is Fedora
