@@ -4,7 +4,7 @@
 if ! command -v git &> /dev/null
 then
     echo "Git is not installed. Installing..."
-    sudo dnf group install "Development Tools"
+    sudo dnf group install "Development Tools" -y
     sudo dnf install git -y
 fi
 
@@ -22,14 +22,23 @@ then
     sudo dnf install util-linux-user -y
 fi
 
-# Change default shell to zsh
-echo "Changing default shell to zsh..."
-chsh -s $(which zsh)
+# Check if chsh is available again after attempting to install util-linux-user
+if command -v chsh &> /dev/null
+then
+    # Change default shell to zsh
+    echo "Changing default shell to zsh..."
+    chsh -s $(which zsh)
+else
+    echo "Unable to find 'chsh' even after installing 'util-linux-user'. Please install it manually."
+    exit 1
+fi
 
 # Clone dotfiles repository
 if [ ! -d "$HOME/.dotfiles" ]; then
     echo "Cloning dotfiles repository..."
     git clone https://github.com/tiagospeckart/dotfiles.git ~/.dotfiles
+else
+    echo "Dotfiles repository already exists. Skipping cloning..."
 fi
 
 # Create necessary symlinks
@@ -40,7 +49,12 @@ ln -sf ~/.dotfiles/bash/.bashrc ~/.bashrc
 ln -sf ~/.dotfiles/.antigen.zsh ~/.antigen.zsh
 
 # Install Zsh and oh-my-zsh
-$HOME/.dotfiles/bash/scripts/install_zsh_and_oh_my_zsh.sh
+if [ -f "$HOME/.dotfiles/bash/scripts/install_zsh_and_oh_my_zsh.sh" ]; then
+    $HOME/.dotfiles/bash/scripts/install_zsh_and_oh_my_zsh.sh
+else
+    echo "Zsh and Oh My Zsh installation script not found. Please check the path and try again."
+    exit 1
+fi
 
 # Install Zsh plugins
 echo "Installing Zsh plugins..."
