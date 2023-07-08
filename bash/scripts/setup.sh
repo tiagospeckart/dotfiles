@@ -61,6 +61,10 @@ echo "Installing Zsh plugins..."
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
+# Create symlink to oh-my-zsh custom theme folder
+echo "Setting agnoster custom theme..."
+ln -sf ~/.dotfiles/oh-my-zsh/custom-theme/agnoster.zsh-theme ~/.oh-my-zsh/custom/themes/
+
 # Setup monospaced font Nerd Font
 echo "Do you want to install NerdFonts? Warning: requires downloading NerdFonts github Repository (over 1GB)"
 echo "(Default: Y/n )"
