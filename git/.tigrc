@@ -1,0 +1,42 @@
+# The best thing in the world..
+bind generic <Ctrl-R> :source ~/.tigrc
+
+# Allow mailmap to do its work
+set mailmap = yes
+#set git-colors        = no
+# We don't care about spaces in diff
+set ignore-space = at-eol
+# Ignore case when searching
+set ignore-case = yes
+
+#set blame-options = -C -C -C
+set tab-size = 4
+
+set horizontal-scroll = 33%
+# Doesn't seem to work fine
+set mouse = no
+
+# Set a custom date
+set main-view-date = custom
+set main-view-date-format = "%Y%m%d.%H%m"
+# This is a nice view with the branching readable and interspectable
+set main-view = \
+    date author:abbreviated,width:10 \
+    id:1,width:0 \
+    commit-title:graph:v2,overflow:1
+
+# Not much to change on
+#set diff-view = text
+#
+set tree-view = \
+    line-number:no mode \
+    id:yes,width:6 \
+    date:default \
+    file-size:units \
+    file-name:always,width:0
+
+bind generic I @sh -c "echo -n %(commit) | xclip -selection c"
+bind main p parent
+
+
+# vim: set tw=72

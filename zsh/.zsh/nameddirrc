@@ -1,0 +1,11 @@
+dot=$HOME/.dotfiles
+work=$HOME/work
+zsh=$HOME/zsh
+
+# Code repo's
+code=$CODE
+bum=$CODE/bum
+dzil=$CODE/Dist-Zilla-PluginBundle-Author-WATERKIP
+git=$CODE/git
+
+# vim: ft=zsh

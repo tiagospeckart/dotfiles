@@ -1,0 +1,15 @@
+=head2 attribute
+
+TODO: Wesley forgot to POD attribute
+
+=cut
+
+has attribute => (
+    is        => 'ro',
+    isa       => 'Defined',
+    required  => 1,
+    lazy      => 1,
+    default   => sub { return [] },
+    predicate => 'has_attribute',
+    builder   => '_build_attribute',
+);

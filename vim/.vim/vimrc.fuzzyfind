@@ -1,0 +1,6 @@
+" Search into every subdirectory
+set path+=**
+set wildmenu
+
+" plugin things
+map <leader>ff :FufCoverageFile<CR>

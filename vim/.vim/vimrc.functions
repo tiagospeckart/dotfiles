@@ -1,0 +1,198 @@
+" STOLEN FROM: http://www.vim.org/scripts/script.php?script_id=4587
+" pretty mode display - converts the one letter status notifiers to words
+function! Mode()
+    let l:mode = mode()
+
+    if     mode ==# "n"  | return "normal"
+    elseif mode ==# "i"  | return "insert"
+    elseif mode ==# "R"  | return "replace"
+    elseif mode ==# "v"  | return "VISUAL"
+    elseif mode ==# "V"  | return "v-line"
+    elseif mode ==# "^V" | return "v-block"
+    else                 | return l:mode
+    endif
+
+endfunc
+
+" Change the values for User1 color preset depending on mode
+function! ModeChanged(mode)
+
+    if     a:mode ==# "n"  | hi User1 guifg=#000000 guibg=#7dcc7d gui=NONE ctermfg=0 ctermbg=2 cterm=NONE
+    elseif a:mode ==# "i"  | hi User1 guifg=#ffffff guibg=#ff0000 gui=bold ctermfg=15 ctermbg=9 cterm=bold
+    elseif a:mode ==# "r"  | hi User1 guifg=#ffff00 guibg=#5b7fbb gui=bold ctermfg=190 ctermbg=67 cterm=bold
+    "elseif a:mode ==# "v"  | hi User1 guifg=#ffffff guibg=#810085 ctermfg=15 ctermbg=53
+    "elseif a:mode ==# "V"  | hi User1 guifg=#ffffff guibg=#810085 ctermfg=15 ctermbg=53
+    "elseif a:mode ==# "^V" | hi User1 guifg=#ffffff guibg=#810085 ctermfg=15 ctermbg=53
+    else                   | hi User1 guifg=#ffffff guibg=#810085 gui=NONE ctermfg=15 ctermbg=53 cterm=NONE
+    endif
+
+endfunc
+
+" Return a string if file is modified or empty string if its not
+function! Modified()
+    let l:modified = &modified
+
+    if modified == 0
+        return ''
+    else
+        return 'modified'
+endfunc
+
+" Move to function?
+if has('statusline')
+
+    " Status line detail:
+    "
+    " %f    file name
+    " %F    file path
+    " %y    file type between braces (if defined)
+    "
+    " %{v:servername}   server/session name (gvim only)
+    "
+    " %<    collapse to the left if window is to small
+    "
+    " %( %) display contents only if not empty
+    "
+    " %1*   use color preset User1 from this point on (use %0* to reset)
+    "
+    " %([%R%M]%)   read-only, modified and modifiable flags between braces
+    "
+    " %{'!'[&ff=='default_file_format']}
+    "        shows a '!' if the file format is not the platform default
+    "
+    " %{'$'[!&list]}  shows a '*' if in list mode
+    " %{'~'[&pm=='']} shows a '~' if in patchmode
+    "
+    " %=     right-align following items
+    "
+    " %{&fileencoding}  displays encoding (like utf8)
+    " %{&fileformat}    displays file format (unix, dos, etc..)
+    " %{&filetype}      displays file type (vim, python, etc..)
+    "
+    " #%n   buffer number
+    " %l/%L line number, total number of lines
+    " %p%   percentage of file
+    " %c%V  column number, absolute column number
+    "
+    function! SetStatusLineStyle()
+
+        let &stl=""
+        " buffer number
+        let &stl.="b%n"
+        let &stl.="|"
+
+        "" session name
+        "if v:servername!=''
+        "    let &stl.="%5* %{v:servername} %0*|"
+        "endif
+
+        " file path
+        let &stl.="%F"
+        " read only, modified, modifiable flags in brackets
+        let &stl.="%([%R%M]%)"
+        let &stl.="|"
+
+        "let &stl.="%(%6* %{Modified()} %)"
+        " mtime
+        let &stl.="%{strftime(\"%H:%M\",getftime(expand(\"\%\%\")))}"
+        let &stl.="|"
+
+        " right-aligh everything past this point
+        let &stl.="%="
+        let &stl.="%<"
+        let &stl.="\%{strftime(\"%H:%M\")}"
+        let &stl.="|"
+        " mode (changes color)
+        let &stl.="%1*\%{Mode()}%0*"
+        let &stl.="|"
+
+        " readonly flag
+        let &stl.="%(%{(&ro!=0?'(readonly)':'')}|%)"
+
+        " file type (eg. python, ruby, etc..)
+        let &stl.="%8*%(%{&filetype}%)%0*"
+        let &stl.="|"
+        " file format (eg. unix, dos, etc..)
+        let &stl.="%{&fileformat}"
+        let &stl.="|"
+        " file encoding (eg. utf8, latin1, etc..)
+        let &stl.="%(%{(&fenc!=''?&fenc:&enc)}|%)"
+
+        "ascii
+        let &stl.="a:\%03.3b"
+        let &stl.="|"
+        "hex
+        let &stl.="h:\%02.2B"
+        let &stl.="|"
+        "col
+        let &stl.="\%03.c"
+        let &stl.="|"
+        "line
+        let &stl.="\%04.l"
+        let &stl.="|"
+        "total lines
+        let &stl.="\%04.L"
+        let &stl.="|"
+        "percentage
+        let &stl.="\%03.p%%"
+
+    endfunc
+
+    au InsertEnter * call ModeChanged(v:insertmode)
+    au InsertChange * call ModeChanged(v:insertmode)
+    au InsertLeave * call ModeChanged(mode())
+
+    " Switch between the normal and vim-debug modes in the status line
+    nmap _ds :call SetStatusLineStyle()<CR>
+    call SetStatusLineStyle()
+    " Window title
+    if has('title')
+        set titlestring=%t%(\ [%R%M]%)
+    endif
+endif
+" END: THE STOLEN FROM
+
+function Dos2Unix()
+    :update
+    :e ++ff=dos
+    :setlocal ff=unix
+    :w
+endfunction
+
+function Unix2Dos()
+    :update
+    :e ++ff=dos
+    :w
+endfunction
+
+function RmWhiteSpace()
+    :%s/\s\+$//
+endfunction
+
+function RmWhiteSpaceBlock()
+    :s/\s\+$//
+endfunction
+
+function Json2XML()
+    :s/\\"/"/g
+    :s/\\n//g
+    :.!xml-format - 2>/dev/null
+    :w
+endfunction
+
+command! GoFmt call GoFmt()
+function! GoFmt()
+  let saved_view = winsaveview()
+  silent %!gofmt
+  if v:shell_error > 0
+    cexpr getline(1, '$')->map({ idx, val -> val->substitute('<standard input>', expand('%'), '') })
+    silent undo
+    cwindow
+  endif
+  call winrestview(saved_view)
+endfunction
+
+function PasteToggle()
+    :if exists("paste_on") | set paste off | else | set paste on <CR>
+    :endif <CR>
+endfunction

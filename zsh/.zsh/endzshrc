@@ -1,0 +1,25 @@
+# This file should be sourced at the final line of your zshrc
+promptinit && prompt waterkip
+
+# Only refresh compinit when the file is older that today
+# compinit also determines when we zcompile everything in our fpath
+_ZCOMP=${ZDOTDIR:-$HOME}/.zcompdump
+today=$(date --date '00:00 today' +%s)
+if [[ ! -e $_ZCOMP || $today -gt $(stat --format %Y $_ZCOMP) ]];
+then
+    compinit -i
+    touch ${_ZCOMP}
+
+    # recompile all our things automaticly. It won't work for our
+    # current shell, but it will for all subsequent shells
+    lpass status -q && lpass sync --background
+    xzcompilefpath
+    xzcompilehomedir
+else
+    compinit -C;
+fi
+unset _ZCOMP
+
+export PS1 # let sudo keep bits of my profile
+
+# vim: ft=zsh

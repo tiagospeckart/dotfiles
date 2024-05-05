@@ -1,0 +1,54 @@
+# ls
+alias l='ls -1'
+alias la='ls -al'
+alias lf='ls -lF'
+alias ll='ls -l'
+alias lt='ls -altr'
+
+# Handy tools for networking
+alias tra='traceroute'
+
+# vim
+# if (which vim) then alias vi = vim else do nothing
+VIM=$(which vim)
+[ $? -eq 0 ] && alias vi='vim'
+unset VIM
+
+alias sqldeveloper=sqldeveloper.sh
+alias xorgconf='sudo Xorg -configure'
+
+alias q='quota -v'
+alias tin='tin -r'
+alias upper='changeCase uc'
+alias lower='changeCase lc'
+
+alias chrome-info='apt-cache policy chromium google-chrome\*'
+alias firefox-info='apt-cache policy firefox firefox-esr'
+
+alias apt-up='sudo aptitude autoclean; sudo apt clean; sudo aptitude update; sudo apt-file update 2>/dev/null'
+alias apt-safe='apt-up; sudo aptitude safe-upgrade'
+alias apt-full='apt-safe; sudo apt clean; sudo aptitude full-upgrade && sudo aptitude autoclean'
+
+alias solarfs="sshfs opperschaap.net:/ $HOME/solar"
+alias solarfs-unmount="fusermount -u $HOME/solar"
+alias pcom='ssh -t opperschaap screen -dr com'
+alias pcomx='ssh -t opperschaap screen -x com'
+
+alias mk_manifest='/usr/bin/perl "-MExtUtils::Manifest=mkmanifest" -e mkmanifest'
+
+alias cpclip='xclip -selection $XCLIP_SELECTION'
+alias ck='cookiecutter opndev --directory'
+alias nb='git nb'
+
+alias nd='dzil new -P Author::WATERKIP'
+
+# vokoscreen
+alias screen-recorder=vokoscreen
+VOKO=$(which vokoscreenNG)
+[ $? -eq 0 ] && alias screen-recorder=vokoscreenNG
+unset VOKO
+
+alias ciq='docker-compose run --rm connectiq'
+alias unify='solaar'
+
+# vim: filetype=zsh syntax=zsh

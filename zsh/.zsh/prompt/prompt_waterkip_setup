@@ -1,0 +1,83 @@
+# This is the prompt as Wesley Schwengle aka waterkip likes it
+
+prompt_waterkip_setup() {
+
+  autoload -Uz colors && colors
+  autoload -Uz add-zsh-hook
+
+  local NONE="$reset_color"
+
+  local DATE_COLOR=$bg_bold[${1:-blue}];
+  local USER_COLOR=$fg_bold[${2:-green}]
+  local ROOT_COLOR=$fg_bold[${3:-red}]
+  local HOST_COLOR="%(!.${ROOT_COLOR}.${USER_COLOR})"
+  local TERM_STRING='%(!.#.$)'
+
+  PROMPT="${DATE_COLOR}%T %l %?${NONE}"
+
+  # TODO: if directory > 49 chars, start stripping them
+  # Otherwise is exceeds the 80 char limit too much.
+
+  PROMPT="$PROMPT ${HOST_COLOR}%n@%m:%d${NONE}"
+  PROMPT="$PROMPT${NONE}"
+  [[ -n $RPROMPT ]] && unset RPROMPT
+
+  # vcs_info stuff
+  vcs_info 2>/dev/null
+  if [[ $? -ne 0 ]]
+  then
+    PROMPT="${PROMPT}${prompt_newline}${TERM_STRING} "
+    return;
+  fi
+
+  _prompt_waterkip_precmd() { vcs_info }
+
+  add-zsh-hook precmd _prompt_waterkip_precmd
+
+  #zstyle ':vcs_info:*+*:*' debug true
+  zstyle ':vcs_info:git*' check-for-changes true
+  zstyle ':vcs_info:git*' check-for-staged-changes true
+  zstyle ':vcs_info:git*:*' stagedstr "%{$fg[red]%}↑$NONE"
+  zstyle ':vcs_info:git*:*' unstagedstr "%{$fg[yellow]%}⚡$NONE"
+
+
+  local VCS_ACTION_FORMAT="%{$fg[cyan]%}%b %u %c [%a]"
+  local VCS_FORMAT="%{$fg[cyan]%}%b %u%c "
+
+  # Set all the styles
+  zstyle ':vcs_info:git*' formats $VCS_FORMAT
+  zstyle ':vcs_info:git*' actionformats $VCS_ACTION_FORMAT
+
+
+  PROMPT="${NONE}${PROMPT}${prompt_newline}"
+  PROMPT="${PROMPT}\${vcs_info_msg_0_}${NONE}${TERM_STRING} "
+
+}
+
+prompt_waterkip_help() {
+
+  fmt <<OEF
+This theme is not done yet.
+
+This theme is very simple, it just shows you a prompt with the time, the
+tty you are on, the exit code of the last command and the user@host:/path.
+
+  DATE TTY RC USER@HOST:PATH
+  $
+
+When you have vcs_info enabled it will also show you the branch that you
+are on and if you have unstaged files and what not. This is still a bit
+buggy when using tab completion.
+
+You can override the default colors of the prompt by setting them:
+
+  prompt waterkip blue green red # blue date, green for user, red for root
+                                 # which are also the defaults.
+
+OEF
+
+}
+
+prompt_waterkip_setup "$@"
+
+# vim: ft=zsh

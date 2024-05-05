@@ -1,0 +1,72 @@
+# top of custom snippets file
+priority 1
+
+extends js
+
+snippet vscript "<script>"
+<script>
+export default {
+  $1
+}
+</script>
+endsnippet
+
+snippet vcomputed "component"
+computed: {
+  $1() {
+    return this.$2
+  }
+}
+endsnippet
+
+snippet vrl "router-link"
+<router-link :to="{ name: '$1' }" rel="$3">
+  $4
+</router-link>
+endsnippet
+
+snippet vrlq "router-link with query"
+<router-link :to="{ name: '$1', query: { $2 } }" rel="$3">
+  $4
+</router-link>
+endsnippet
+
+snippet vic "vue import component"
+import ${1:Component} from '@/components/$1.vue';
+endsnippet
+
+snippet viv "vue import view"
+import ${1:View} from '@/views/$1.vue';
+endsnippet
+
+snippet vstore "Vuex store"
+export const namespaced = true;
+
+export const state = {
+
+}
+
+export const mutations = {
+
+}
+
+export const actions = {
+
+}
+endsnippet
+
+snippet vmut "mutation"
+    ${1:MUTATION}(state, $2) {
+    },
+endsnippet
+
+snippet vact "action"
+    ${1:action}({commit}, $2) {
+        commit('${3:MUTATION}', $2);
+    },
+endsnippet
+
+
+
+
+# vim: ft=snippets

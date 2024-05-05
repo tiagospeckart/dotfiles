@@ -1,0 +1,10 @@
+autocmd BufNewFile * silent! 0r $HOME/.vim/templates/%:e.template
+
+nnoremap ,pod :read $HOME/.vim/templates/pod.template<CR>jji
+nnoremap ,define :read $HOME/.vim/templates/define.template<CR>
+nnoremap ,sig :read $HOME/.vim/templates/sig.template<CR>
+nnoremap ,func :read $HOME/.vim/templates/func.template<CR>:.,+26s/function/foo/g
+nnoremap ,attr :read $HOME/.vim/templates/attr.template<CR>:.,+14s/attribute/foo/g
+
+" Make this a function
+" nnoremap ,test :read $HOME/.vim/templates/func.template<CR>:.,+len(readfile($HOME/.vim/templates/func.template)s/function/foo/g

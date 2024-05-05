@@ -1,0 +1,17 @@
+package Foo;
+use Moose;
+
+# ABSTRACT: Foo needs an abstract
+
+
+
+
+__PACKAGE__->meta->make_immutable;
+
+__END__
+
+=head1 DESCRIPTION
+
+=head1 SYNOPSIS
+
+    use Foo;

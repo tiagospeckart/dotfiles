@@ -1,0 +1,27 @@
+=head2 function
+
+    $self->function(
+
+    );
+
+TODO: Wesley forgot to POD function
+
+=cut
+
+define_profile function => (
+    required => {
+    },
+    optional => {
+    },
+    defaults => {
+    },
+);
+
+sig function => '';
+
+sub function {
+    my ($self) = @_;
+    my $args = assert_profile({@_})->valid;
+
+    return;
+}

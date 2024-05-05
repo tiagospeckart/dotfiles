@@ -1,0 +1,141 @@
+[user]
+  name = Tiago Martins Speckart
+  email = tiagospeckart@gmail.com
+
+[core]
+  longpaths = true
+  repositoryformatversion = 0
+  filemode = true
+  bare = false
+  logallrefupdates = true
+  editor = vim-git
+
+[log]
+    mailmap = true
+
+[init]
+  defaultBranch = master
+
+[alias]
+  vi = editor
+  sp = s --porcelain
+  cne = c --no-edit
+  poh = po HEAD
+  pohf = git poh --force-with-lease
+  lb = sl @{u}...HEAD
+
+[color]
+  ui = auto
+  advice = never
+  branch = never
+
+[color "branch"]
+  current = green
+  local   = yellow
+  remote  = yellow reverse
+
+[color "diff"]
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = cyan
+
+[push]
+  default = current
+
+[pull]
+  rebase = true
+
+[advice]
+  statusHints = false
+
+[diff]
+  mnemonicprefix = true
+  algorithm = patience
+
+[remote]
+  pushDefault = origin
+
+[rebase]
+  autoStash = true
+  forkpoint = false
+
+[gui]
+  encoding = utf-8
+  gcwarning = false
+  diffcontext = 10
+  encoding = utf-8
+  gcwarning = false
+  geometry = 1350x1250+1432+174 496 288
+  matchtrackingbranch = true
+  pruneduringfetch = true
+  trustmtime = true
+  wmstate = normal
+
+[clean]
+  requireForce = true
+
+[merge]
+  tool = meld
+  verbosity = 5
+
+[advice]
+  statusHints = false
+  detachedHead = false
+
+[diff "exif"]
+  textconv = exiftool
+
+[gc]
+  auto = 0
+
+[gui]
+  geometry = 1276x2087+1432+174 496 288
+
+[rerere]
+  enabled = false
+
+[commit]
+  template = /usr/local/share/bum/default-commit-message
+
+[sendemail]
+  confirm = auto
+  suppresscc = self
+
+[bum]
+  pushnew = true
+[bum "nowarning"]
+  upstream = true
+[bum "branches"]
+  protected = master
+  protected = development
+  protected = devel
+  protected = dev
+  protected = trial
+
+[include]
+  path = /usr/local/share/bum/bum-core.conf
+  path = /usr/local/share/bum/gitconfig.alias
+  path = /usr/local/share/bum/gitconfig.log-alias
+  path = ~/.config/git/private.config
+
+[includeIf "gitdir:~/work/mintlab/"]
+  path = ~/.config/git/mintlab.config
+
+[includeIf "gitdir:~/work/opndev/"]
+  path = ~/.config/git/opndev.config
+
+[includeIf "gitdir:~/code/opndev/"]
+  path = ~/.config/git/opndev.config
+
+[includeIf "gitdir:~/code/perl/"]
+  path = ~/.config/git/cpan.config
+
+[includeIf "gitdir:~/code/perl/net-saml-group/"]
+  path = ~/.config/git/net-saml.config
+

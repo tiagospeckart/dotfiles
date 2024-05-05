@@ -1,0 +1,231 @@
+priority 1
+
+snippet zssub "Zaaksysteem sub"
+
+=head2 $1
+
+${3:TODO: Write pod}
+
+=cut
+
+sub ${1:function_name} {
+    my ($self, ${2:%args}) = @_;
+
+    ${0:...;}
+
+    return;
+}
+
+endsnippet
+
+snippet zsprof
+
+=head2 $1
+
+${12:TODO: Write pod}
+
+=cut
+
+define_profile $1 => (
+    ${2:required => \{
+        ${3:key} => ${4:type},
+        ${5:key  => ${6:type},}
+    \},}
+    ${7:optional => \{
+        ${8:key} => ${9:type},
+        ${10:key  => ${11:type},}
+    \},}
+);
+
+sub ${1:function_name} {
+    my $self = shift;
+    my $args = assert_profile({@_})->valid;
+
+    ${0:...;}
+
+    return;
+}
+
+
+endsnippet
+
+snippet zssig "ZS sig sub"
+
+=head2 $1
+
+${5:TODO: write POD}
+
+=cut
+
+sig $1 => '${2:Str} ${3:=> ${4:RetVal}}'
+
+sub ${1:function_name} {
+    my ($self, %args) = @_;
+
+    ${0:...;}
+
+    return;
+}
+
+endsnippet
+
+snippet psub "Perl sub"
+sub ${1:function_name} {
+    my ($self, ${2:,%args) = @_;
+
+    ${0:...;}
+
+    return;
+}
+endsnippet
+
+snippet ppod "Perl POD" b
+=pod
+
+${0:Your POD goes here}
+
+=cut
+
+endsnippet
+
+snippet zsmoo "ZS POD" b
+package Zaaksysteem::${1:Module::Name}
+use Zaaksysteem::Moose;
+
+=head1 NAME
+
+Zaaksysteem::$1 - ${2:ABSTRACT HERE}
+
+=head1 DESCRIPTION
+
+${3:This is a module that provides X}
+
+=head1 SYNOPSIS
+
+    package Zaaksysteem::Example;
+    use Zaaksysteem::$1;
+
+    my $thing = Zaaksysteem::$1->new();
+    $thing->foo();
+
+=head1 ATTRBUTES
+
+=cut
+
+${4:mooattr_or_build}
+
+=head1 METHODS
+
+=cut
+
+${0:# Your code here}
+
+__PACKAGE__->meta->make_immutable;
+
+__END__
+
+=head1 COPYRIGHT and LICENSE
+
+Copyright (c) 2020, Mintlab B.V. and all the persons listed in the
+L<CONTRIBUTORS|Zaaksysteem::CONTRIBUTORS> file.
+
+Zaaksysteem uses the EUPL license, for more information please have a look at
+the L<LICENSE|Zaaksysteem::LICENSE> file.
+endsnippet
+
+snippet moobuild "Moo(se) builder" bA
+sub _build_${1:thing} {
+    my $self = shift;
+
+    my \$$2 = $self->${2:attribute_name}${3:->${4:method}};
+
+    ${0:# Your code here}
+
+    return \$$2;
+
+}
+endsnippet
+
+snippet mooattr "Moo(se) attribute" bA
+has ${1:attr} => (
+    is => '${2:ro}',
+    isa => '${3:Defined}',
+);
+endsnippet
+
+snippet mooatbuild "Moose build-lazy" b
+has ${1:attr} => (
+    is => 'ro',
+    isa => '${2:Defined}',
+    lazy => 1,
+    builder => '_build_$1',
+    predicate => 'has_$1',
+);
+
+build${0}
+endsnippet
+
+snippet objectpad "Object::Pad" bA
+package ${1:pkg};
+use v5.26;
+use Object::Pad;
+
+# ABSTRACT: $1 needs a propper abstract
+
+${2:class} $1;
+use Carp qw(croak);
+
+1;
+
+__END__
+
+=head1 DESCRIPTION
+
+=head1 SYNOPSIS
+
+=head1 ATTRIBUTES
+
+=head1 METHODS
+endsnippet
+
+snippet pkg "Regular Perl package" Ba
+package ${1:pkg};
+use warnings;
+use strict;
+
+# ABSTRACT: $1 needs a propper abstract
+
+use Exporter qw(import);
+our @EXPORT_OK = qw();
+
+our %EXPORT_TAGS = (
+  all => \@EXPORT_OK
+);
+
+1;
+
+__END__
+
+=head1 DESCRIPTION
+
+=head1 SYNOPSIS
+
+=head1 METHODS
+
+endsnippet
+
+snippet perltest "Test Perl" bA
+use warnings;
+use strict;
+
+use Test::More;
+use Test::Deep;
+use Test::Exception;
+
+fail("Basic test fails");
+
+done_testing();
+
+endsnippet
+
+# vim: ft=snippets

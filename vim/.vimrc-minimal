@@ -1,0 +1,7 @@
+" Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
+" For more info see: https://github.com/junegunn/vim-plug
+call plug#begin('~/.vim/plugin')
+
+Plug 'vim-airline/vim-airline'
+
+call plug#end()

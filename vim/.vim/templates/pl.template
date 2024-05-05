@@ -1,0 +1,38 @@
+#!/usr/bin/perl
+use warnings;
+use strict;
+
+# ABSTRACT: script needs an abstract
+# PODNAME: x.pl
+
+use Getopt::Long;
+use Pod::Usage;
+
+my @opts = qw(help);
+my %opts = ();
+
+{
+    local $SIG{__WARN__};
+    my $ok = eval {
+        GetOptions(\%opts, @opts);
+    };
+    if (!$ok) {
+        die($@);
+    }
+}
+
+pod2usage(0) if ($opts{help});
+
+__END__
+
+=head1 SYNOPSIS
+
+x.pl --help [ OPTIONS ]
+
+=head1 OPTIONS
+
+=over
+
+=item * --help (this help)
+
+=back

@@ -1,0 +1,61 @@
+" Plugins work based on filetype
+filetype plugin on
+" Indenting works based filetype
+filetype indent on
+syntax enable
+syntax on
+filetype on
+
+let g:html_indent_inctags = "html,body,head,tbody"
+
+"
+" http://stackoverflow.com/questions/1562633/setting-vim-whitespace-preferences-by-filetype
+" 1 to Peter's answer, but Vim provides another solution as well. If you want to
+" do something more complicated than a single setlocal, like setting up a whole
+" bunch of options, commands, and mappings at once, then vim's filetype plugin
+" feature comes to the rescue.
+"
+" You need to have filetype plugin on or filetype plugin indent on in your
+" .vimrc, and then to create a plugin for e.g. ruby you can create
+" ~/.vim/ftplugin/ruby.vim. Technically you can use any commands you like in
+" here, to be run when a Ruby file is loaded, but the recommended ones include
+" setlocal, map <buffer>, command -buffer, and defining functions. Lots more
+" information is in the User Guide; if you're pretty familiar with scripting vim
+" then jump to :help 41.11, otherwise read :help usr_40 and :help usr_41.
+"
+
+au BufReadPost *.tt   set filetype=html syntax=html
+au BufReadPost *.pod  set filetype=perl syntax=perl
+au BufReadPost *.xsd  set filetype=xml syntax=xml
+au BufReadPost *.wsdl set filetype=xml syntax=xml
+au BufReadPost *.xcu  set filetype=xml syntax=xml
+au BufReadPost *.txt  set filetype=text syntax=text
+au BufReadPost *.yaml set filetype=yaml syntax=yaml
+au BufReadPost *.yml  set filetype=yaml syntax=yaml
+au BufReadPost *.swig set filetype=html syntax=html
+au BufReadPost *.vue  set filetype=vue syntax=vue
+au BufReadPost *.c    set filetype=c syntax=c
+au BufReadPost *.js   set filetype=js.vue syntax=javascript
+au BufReadPost *.go   set filetype=go syntax=go
+
+"au BufRead,BufNewFile *.py,*.pyw,*.c,*.h,*.pl,*.pm,*.sh match BadWhitespace /\s\+$/
+"au BufNewFile,BufRead *.py set tabstop=4 set softtabstop=4 set shiftwidth=4 set textwidth=79 set expandtab set autoindent set fileformat=unix
+
+autocmd Filetype * setlocal ts=2 sts=2 sw=2 tw=79
+autocmd Filetype text setlocal ts=2 sts=2 sw=2 tw=0
+autocmd Filetype go set noexpandtab ts=4 sw=4 tw=79
+
+" gg=G
+au FileType xml  setlocal equalprg=xml-format\ -\ 2>/dev/null
+au FileType json setlocal equalprg=json_xs\ -f\ json\ -t\ json-pretty\ 2>/dev/null
+au FileType perl setlocal equalprg=perltidy\ -\ 2>/dev/null
+au FileType javascript setlocal equalprg=eslint\ -\ 2>/dev/null
+au FileType vue setlocal equalprg=eslint\ -\ 2>/dev/null
+
+autocmd BufWritePre *.py execute ':Black'
+
+augroup go_autocmd
+    autocmd BufWritePre *.go GoFmt
+augroup END
+
+"autocmd Filetype gitcommit spell textwidth=72

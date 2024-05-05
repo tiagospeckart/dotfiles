@@ -1,0 +1,42 @@
+" Mappings
+map <leader>j2x :call Json2XML()<CR>
+map <leader>u2d :call Unix2Dos()<CR>
+map <leader>d2u :call Dos2Unix()<CR>
+nmap <leader>rmws :call RmWhiteSpace()<CR>
+vmap <leader>rmws :call RmWhiteSpaceBlock()<CR>
+
+map <leader>tp :!git ctags<CR>
+
+nmap <leader>pt :%!perltidy<CR>
+vmap <leader>pt !perltidy<CR>
+
+nmap <leader>jt :%!json_xs -f json -t json-pretty<CR>
+vmap <leader>jt !json_xs -f json -t json-pretty<CR>
+
+nmap <leader>xt :%!xmllint --format -<CR>
+vmap <leader>xt !xmllint --format -<CR>
+
+vmap <leader>s !sort<CR>
+nmap <leader>s :%!sort<CR>
+
+vmap <leader>su !sort -u<CR>
+nmap <leader>su :%!sort -u<CR>
+
+nnoremap <F10> :set invpaste paste?<CR>
+imap <F10> <C-O><F10>
+set pastetoggle=<F10>
+
+" copy and paste
+"vmap <C-c> "+y
+"vmap <C-x> "+c
+"vmap <C-v> "+p
+"imap <C-v> "+pa
+
+map <F11> :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
+"map <F10> :call SyntaxOn()<CR>
+map <leader>syn :if exists("syntax_on") <Bar>
+    \  syntax off <Bar>
+    \ else <Bar>
+    \ syntax enable <Bar>
+    \ endif <CR>

@@ -1,0 +1,16 @@
+cache/
+/vim/.vim/.netrwhist
+/vim/.vim/plugin/**
+/vim/.vim/bundle/**
+/vim/.vim/.VimballRecord
+/vim/.vim/black/**
+/tags
+*.orig
+*.rej
+/awesome/themes/**
+/apps/.texmf-var/**
+/.stow-debian
+*.zwc
+.zcompdump
+/apps/.ncftp/trace.*
+/apps/.local/*

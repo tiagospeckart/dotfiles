@@ -1,0 +1,98 @@
+" For more info see: https://github.com/junegunn/vim-plug
+" Don't use 'plugins' as a directory as it creates havoc
+call plug#begin('~/.vim/bundle')
+
+" http://stackoverflow.com/questions/11774904/vim-scripting-if-vim-version-is-7-3
+
+" Text Object plugins, this is the main dependency for almost all of
+" them
+Plug 'kana/vim-textobj-user'
+
+" Nifty tools
+Plug 'w0rp/ale'
+Plug 'tmhedberg/SimpylFold'
+
+Plug 'christoomey/vim-sort-motion'
+Plug 'christoomey/vim-system-copy'
+Plug 'christoomey/vim-titlecase'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
+Plug 'vim-scripts/ReplaceWithRegister'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-line'
+Plug 'vimtaku/vim-textobj-sigil'
+
+Plug 'vim-scripts/L9'
+Plug 'vim-scripts/FuzzyFinder'
+
+Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'scrooloose/nerdcommenter'
+"Plug 'luochen1990/indent-detector.vim'
+
+"Plug 'tpope/vim-fugitive'
+
+" Airline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+
+" Theme
+"Plug 'dikiaap/minimalist'
+Plug 'Reewr/vim-monokai-phoenix'
+Plug 'cocopon/iceberg.vim'
+
+" PSQL
+Plug 'lifepillar/pgsql.vim', { 'for' : ['sql', 'pgsql'] }
+
+Plug 'fladson/vim-kitty'
+
+" Puppet
+Plug 'rodjek/vim-puppet', { 'for' : ['puppet'] }
+Plug 'puppetlabs/puppet-syntax-vim', { 'for' : ['puppet'] }
+
+" Docker file syntaxing
+Plug 'ekalinin/Dockerfile.vim', { 'for': ['Dockerfile'] }
+
+" Vagrant
+Plug 'hashivim/vim-vagrant', { 'for' : ['vagrant'] }
+
+" Bats highlighting
+Plug 'vim-scripts/bats.vim', { 'for' : ['bats'] }
+
+" Pythony
+Plug 'vim-scripts/indentpython.vim', { 'for': ['python'] }
+Plug 'vim-syntastic/syntastic', { 'for' : ['python'] }
+Plug 'nvie/vim-flake8', { 'for' : ['python'] }
+Plug 'psf/black', { 'for' : ['python'] }
+
+" JS
+Plug 'maksimr/vim-jsbeautify', { 'for': ['javascript', 'javascript.jsx'] }
+Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx', 'json'] }
+
+" Vue
+Plug 'leafoftree/vim-vue-plugin', { 'for' : ['vue'] }
+" leafoftree seems active
+"Plug 'posva/vim-vue', { 'for' : ['vue'] }
+
+" TypeScript
+"Plug 'leafgarland/typescript-vim', { 'for' : ['typescript'] }
+
+" Ruby
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for' : ['ruby'] }
+
+Plug 'klimeryk/vim-monkey-c', { 'for' : ['monkey-c'] }
+
+
+call plug#end()
+
+" PSQL plugin settings
+let g:sql_type_default = 'pgsql'
+
+" Set ultisnips triggers
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+

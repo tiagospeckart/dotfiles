@@ -1,0 +1,8 @@
+define_profile function => (
+    required => {
+    },
+    optional => {
+    },
+    defaults => {
+    },
+);

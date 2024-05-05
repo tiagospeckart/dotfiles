@@ -1,0 +1,441 @@
+
+[code/lastpass-cli]
+checkout = git clone 'git@github.com:lastpass/lastpass-cli.git' 'lastpass-cli'
+fetch = git fat
+
+[work/mintlab/zaaksysteem]
+checkout = git clone 'git@gitlab.com:zaaksysteem/zaaksysteem.git' 'zaaksysteem'
+fetch = git fat
+
+[code/Catalyst-TraitFor-Controller-reCAPTCHA]
+checkout = git clone 'git@github.com:waterkip/Catalyst-TraitFor-Controller-reCAPTCHA.git' 'Catalyst-TraitFor-Controller-reCAPTCHA'
+fetch = git fat
+
+[code/Cpanel-JSON-XS]
+checkout = git clone 'git@github.com:rurban/Cpanel-JSON-XS.git' 'Cpanel-JSON-XS'
+fetch = git fat
+
+[code/Data-FormValidator]
+checkout = git clone 'https://github.com/dnmfarrell/Data-FormValidator' 'Data-FormValidator'
+fetch = git fat
+
+[code/Data-Random-NL]
+checkout = git clone 'git@gitlab.com:waterkip/data-random-nl.git' 'Data-Random-NL'
+fetch = git fat
+
+[code/DateTime-Locale]
+checkout = git clone 'git@github.com:waterkip/DateTime-Locale.git' 'DateTime-Locale'
+fetch = git fat
+
+[code/DateTime-TimeZone]
+checkout = git clone 'git@github.com:waterkip/DateTime-TimeZone.git' 'DateTime-TimeZone'
+fetch = git fat
+
+[code/DateTime.pm]
+checkout = git clone 'git@github.com:waterkip/DateTime.pm.git' 'DateTime.pm'
+fetch = git fat
+
+[code/Dist-Zilla-PluginBundle-Author-WATERKIP]
+checkout = git clone 'git@gitlab.com:waterkip/dist-zilla-pluginbundle-author-waterkip.git' 'Dist-Zilla-PluginBundle-Author-WATERKIP'
+fetch = git fat
+
+[code/FOK-crewgeschiedenis]
+checkout = git clone 'git@github.com:zarGonnn/FOK-crewgeschiedenis.git' 'FOK-crewgeschiedenis'
+fetch = git fat
+
+[code/File-ArchivableFormats]
+checkout = git clone 'git@gitlab.com:zaaksysteem/File-ArchivableFormats.git' 'File-ArchivableFormats'
+fetch = git fat
+
+[code/File-ShareDir]
+checkout = git clone 'git@github.com:perl5-utils/File-ShareDir.git' 'File-ShareDir'
+fetch = git fat
+
+[code/Furl]
+checkout = git clone 'git@github.com:waterkip/Furl.git' 'Furl'
+fetch = git fat
+
+[code/HTTP-Message]
+checkout = git clone 'git@github.com:libwww-perl/HTTP-Message.git' 'HTTP-Message'
+fetch = git fat
+
+[code/Log-Log4perl-Appender-Fluent]
+checkout = git clone 'git@gitlab.com:waterkip/Log-Log4perl-Appender-Fluent.git' 'Log-Log4perl-Appender-Fluent'
+fetch = git fat
+
+[code/Markdent]
+checkout = git clone 'git@github.com:houseabsolute/Markdent.git' 'Markdent'
+fetch = git fat
+
+[code/Markdown-Pod]
+checkout = git clone 'git@github.com:keedi/Markdown-Pod.git' 'Markdown-Pod'
+fetch = git fat
+
+[code/MaterialDesign-Webfont]
+checkout = git clone 'git@github.com:waterkip/MaterialDesign-Webfont.git' 'MaterialDesign-Webfont'
+fetch = git fat
+
+[code/Module-Install]
+checkout = git clone 'git@github.com:Perl-Toolchain-Gang/Module-Install.git' 'Module-Install'
+fetch = git fat
+
+[code/Moo]
+checkout = git clone 'git@github.com:moose/Moo.git' 'Moo'
+fetch = git fat
+
+[code/Moose]
+checkout = git clone 'git://git.moose.perl.org/Moose.git' 'Moose'
+fetch = git fat
+
+[code/NLExtract]
+checkout = git clone 'git@github.com:nlextract/NLExtract.git' 'NLExtract'
+fetch = git fat
+
+[code/Parse-Snort]
+checkout = git clone 'git@github.com:waterkip/Parse-Snort.git' 'Parse-Snort'
+fetch = git fat
+
+[code/Parse-Snort-1]
+checkout = git clone 'git@github.com:waterkip/Parse-Snort-1.git' 'Parse-Snort-1'
+fetch = git fat
+
+[code/SQL-Translator]
+checkout = git clone 'git://git.shadowcat.co.uk/dbsrgits/SQL-Translator.git' 'SQL-Translator'
+fetch = git fat
+
+[code/Software-License]
+checkout = git clone 'git@github.com:waterkip/Software-License.git' 'Software-License'
+fetch = git fat
+
+[code/Test-Nightly-0.03]
+checkout = git clone 'git@github.com:waterkip/test-nightly.git' 'Test-Nightly-0.03'
+fetch = git fat
+
+[code/Webservice-Bl3p]
+checkout = git clone 'git@gitlab.com:waterkip/Webservice-Bl3p.git' 'Webservice-Bl3p'
+fetch = git fat
+
+[code/ZS-Simplyadmire]
+checkout = git clone 'git@github.com:waterkip/Zaaksysteem.git' 'ZS-Simplyadmire'
+fetch = git fat
+
+[code/ansible]
+checkout = git clone 'git@github.com:ansible/ansible.git' 'ansible'
+fetch = git fat
+
+[code/autorandr]
+checkout = git clone 'git@github.com:waterkip/autorandr.git' 'autorandr'
+fetch = git fat
+
+[code/bats-core]
+checkout = git clone 'git@github.com:bats-core/bats-core.git' 'bats-core'
+fetch = git fat
+
+[code/bl3p-api]
+checkout = git clone 'git@github.com:waterkip/bl3p-api.git' 'bl3p-api'
+fetch = git fat
+
+[code/bum]
+checkout = git clone 'git@gitlab.com:waterkip/bum' 'bum'
+fetch = git fat
+
+[code/cipherscan]
+checkout = git clone 'git@github.com:waterkip/cipherscan.git' 'cipherscan'
+fetch = git fat
+
+[code/cookiecutter]
+checkout = git clone 'git@github.com:audreyr/cookiecutter.git' 'cookiecutter'
+fetch = git fat
+
+[code/coursera]
+checkout = git clone 'git@github.com:waterkip/coursera.git' 'coursera'
+fetch = git fat
+
+[code/cpanminus]
+checkout = git clone 'git@github.com:miyagawa/cpanminus.git' 'cpanminus'
+fetch = git fat
+
+[code/cv]
+checkout = git clone 'git@github.com:waterkip/cv.git' 'cv'
+fetch = git fat
+
+[code/dbi]
+checkout = git clone 'git@github.com:waterkip/dbi.git' 'dbi'
+fetch = git fat
+
+[code/dbix-class]
+checkout = git clone 'git@github.com:dbsrgits/dbix-class.git' 'dbix-class'
+fetch = git fat
+
+[code/dfv]
+checkout = darcs get 'http://mark.stosberg.com/darcs_hive/dfv' 'dfv'
+
+[code/dist-zilla-plugin-repository]
+checkout = git clone 'git@github.com:fayland/dist-zilla-plugin-repository.git' 'dist-zilla-plugin-repository'
+fetch = git fat
+
+[code/dns-reverse]
+checkout = git clone 'git@gitlab.com:waterkip/dns-reverse.git' 'dns-reverse'
+fetch = git fat
+
+[code/docker-ossec-server]
+checkout = git clone 'git@github.com:xetus-oss/docker-ossec-server.git' 'docker-ossec-server'
+fetch = git fat
+
+[code/docker-perl]
+checkout = git clone 'git@github.com:Perl/docker-perl.git' 'docker-perl'
+fetch = git fat
+
+[code/docker-registry]
+checkout = git clone 'git@github.com:pplu/docker-registry.git' 'docker-registry'
+fetch = git fat
+
+[code/documents]
+checkout = git clone 'git@gitlab.com:waterkip/documents.git' 'documents'
+fetch = git fat
+
+[code/dzil-upload-to-stratopan]
+checkout = git clone 'git@github.com:friedo/dzil-upload-to-stratopan.git' 'dzil-upload-to-stratopan'
+fetch = git fat
+
+[code/email-outlook-message-perl]
+checkout = git clone 'git@github.com:waterkip/email-outlook-message-perl.git' 'email-outlook-message-perl'
+fetch = git fat
+
+[code/finance-loan-repayment]
+checkout = git clone 'git@gitlab.com:waterkip/finance-loan-repayment.git' 'finance-loan-repayment'
+fetch = git fat
+
+[code/fokrss]
+checkout = git clone 'git@github.com:waterkip/libopn-fok-perl.git' 'fokrss'
+fetch = git fat
+
+[code/git]
+checkout = git clone 'git@github.com:git/git.git' 'git'
+fetch = git fat
+
+[code/gitlab-ce]
+checkout = git clone 'git@gitlab.com:gitlab-org/gitlab-ce.git' 'gitlab-ce'
+fetch = git fat
+
+[code/http-daemon]
+checkout = git clone 'git@github.com:gisle/http-daemon.git' 'http-daemon'
+fetch = git fat
+
+[code/ids-snort]
+checkout = git clone 'git@gitlab.com:waterkip/ids-snort.git' 'ids-snort'
+fetch = git fat
+
+[code/incscribi]
+checkout = git clone 'git@github.com:waterkip/inscribi.git' 'incscribi'
+fetch = git fat
+
+[code/ipc-system-simple]
+checkout = git clone 'git@github.com:pjf/ipc-system-simple.git' 'ipc-system-simple'
+fetch = git fat
+
+[code/jest]
+checkout = git clone 'git@github.com:waterkip/jest.git' 'jest'
+fetch = git fat
+
+[code/kubectl-cliwrapper]
+checkout = git clone 'git@github.com:waterkip/kubectl-cliwrapper.git' 'kubectl-cliwrapper'
+fetch = git fat
+
+[code/kubernetes-rest]
+checkout = git clone 'git@github.com:pplu/kubernetes-rest.git' 'kubernetes-rest'
+fetch = git fat
+
+[code/libopn-appconfig-perl]
+checkout = git clone 'git@github.com:waterkip/libopn-appconfig.git' 'libopn-appconfig-perl'
+fetch = git fat
+
+[code/libphonenumber]
+checkout = git clone 'git@github.com:googlei18n/libphonenumber.git' 'libphonenumber'
+fetch = git fat
+
+[code/libreoffice-pdfa1a]
+checkout = git clone 'git@bitbucket.org:mintlab/libreoffice-pdfa1a.git' 'libreoffice-pdfa1a'
+fetch = git fat
+
+[code/libwww-perl]
+checkout = git clone 'git@github.com:libwww-perl/libwww-perl.git' 'libwww-perl'
+fetch = git fat
+
+[code/lua-resty-logger-socket]
+checkout = git clone 'https://github.com/cloudflare/lua-resty-logger-socket.git' 'lua-resty-logger-socket'
+fetch = git fat
+
+[code/lwp-mediatypes]
+checkout = git clone 'git@github.com:waterkip/lwp-mediatypes.git' 'lwp-mediatypes'
+fetch = git fat
+
+[code/memcached]
+checkout = git clone 'git@github.com:waterkip/memcached.git' 'memcached'
+fetch = git fat
+
+[code/mkcertchain]
+checkout = git clone 'git@github.com:waterkip/mkcertchain.git' 'mkcertchain'
+fetch = git fat
+
+[code/multibootusb]
+checkout = git clone 'git@github.com:waterkip/multibootusb.git' 'multibootusb'
+fetch = git fat
+
+[code/opn-ansible]
+checkout = git clone 'git@gitlab.com:waterkip/opn-ansible.git' 'opn-ansible'
+fetch = git fat
+
+[code/opn-chef]
+checkout = git clone 'git@gitlab.com:opn-chef/opn-chef.git' 'opn-chef'
+
+[code/opn-openstack]
+checkout = git clone 'git@gitlab.com:waterkip/opn-openstack.git' 'opn-openstack'
+
+[code/opn-utils]
+checkout = git clone 'git@github.com:waterkip/opn-utils.git' 'opn-utils'
+
+[code/ossec-hids]
+checkout = git clone 'https://github.com/ossec/ossec-hids.git' 'ossec-hids'
+
+[code/pa]
+checkout = git clone 'git@gitlab.com:waterkip/aua-stars.git' 'pa'
+
+[code/params-check]
+checkout = git clone 'git@github.com:waterkip/params-check.git' 'params-check'
+
+[code/password-store]
+checkout = git clone 'https://git.zx2c4.com/password-store' 'password-store'
+
+[code/pdf-sigil]
+checkout = git clone 'git@github.com:tstdin/pdf-sigil.git' 'pdf-sigil'
+
+[code/perl-Algorithm-CheckDigits]
+checkout = git clone 'git@github.com:waterkip/perl-Algorithm-CheckDigits.git' 'perl-Algorithm-CheckDigits'
+
+[code/perl-Archive-Zip]
+checkout = git clone 'git@github.com:redhotpenguin/perl-Archive-Zip.git' 'perl-Archive-Zip'
+
+[code/perl-Net-SAML2]
+checkout = git clone 'git@github.com:waterkip/perl-Net-SAML2.git' 'perl-Net-SAML2'
+
+[code/perl5-XML-Compile]
+checkout = git clone 'git@github.com:markov2/perl5-XML-Compile.git' 'perl5-XML-Compile'
+
+[code/pgbadger]
+checkout = git clone 'git@github.com:darold/pgbadger.git' 'pgbadger'
+
+[code/pgdiff]
+checkout = git clone 'git@github.com:waterkip/pgdiff.git' 'pgdiff'
+
+[code/poppler]
+checkout = git clone 'https://gitlab.freedesktop.org/poppler/poppler.git' 'poppler'
+fetch = git fat
+
+[code/postfix]
+checkout = git clone 'git@github.com:waterkip/postfix.git' 'postfix'
+fetch = git fat
+
+[code/pulledpork]
+checkout = git clone 'git@github.com:waterkip/pulledpork.git' 'pulledpork'
+fetch = git fat
+
+[code/python-data-random-nl]
+checkout = git clone 'git@gitlab.com:waterkip/python-data-random-nl.git' 'python-data-random-nl'
+fetch = git fat
+
+[code/rebuild-iptables]
+checkout = git clone 'git@github.com:phlipper/rebuild-iptables.git' 'rebuild-iptables'
+fetch = git fat
+
+[code/regexp-common-ip]
+checkout = git clone 'git@github.com:waterkip/regexp-ip.git' 'regexp-common-ip'
+fetch = git fat
+
+[code/requests]
+checkout = git clone 'git@github.com:requests/requests.git' 'requests'
+fetch = git fat
+
+[code/sbox]
+checkout = git clone 'git@gitlab.com:waterkip/sandboxing.git' 'sbox'
+fetch = git fat
+
+[code/siege]
+checkout = git clone 'https://github.com/JoeDog/siege.git' 'siege'
+fetch = git fat
+
+[code/sports-perl]
+checkout = git clone 'git@github.com:waterkip/sports-perl.git' 'sports-perl'
+fetch = git fat
+
+[code/stowing]
+checkout = git clone 'git@gitlab.com:waterkip/stowing.git' 'stowing'
+fetch = git fat
+
+[code/syzygy]
+checkout = git clone 'https://gitlab.com/zaaksysteem/syzygy.git' 'syzygy'
+fetch = git fat
+
+[code/test-mock-one]
+checkout = git clone 'git@gitlab.com:waterkip/test-mock-one.git' 'test-mock-one'
+fetch = git fat
+
+[code/test-package-perl]
+checkout = git clone 'git@github.com:waterkip/test-package-perl.git' 'test-package-perl'
+fetch = git fat
+
+[code/text-continuation-parser]
+checkout = git clone 'git@gitlab.com:waterkip/text-continuation-parser.git' 'text-continuation-parser'
+fetch = git fat
+
+[code/text-simpletable]
+checkout = git clone 'git@github.com:marcusramberg/text-simpletable.git' 'text-simpletable'
+fetch = git fat
+
+[code/tig]
+checkout = git clone 'git@github.com:jonas/tig.git' 'tig'
+fetch = git fat
+
+[code/toolkit-for-ynab]
+checkout = git clone 'git@github.com:toolkit-for-ynab/toolkit-for-ynab.git' 'toolkit-for-ynab'
+fetch = git fat
+
+[code/unoconv]
+checkout = git clone 'git@github.com:dagwieers/unoconv.git' 'unoconv'
+fetch = git fat
+
+[code/urxvt-resize-font]
+checkout = git clone 'git@github.com:simmel/urxvt-resize-font.git' 'urxvt-resize-font'
+fetch = git fat
+
+[code/wazuh]
+checkout = git clone 'git@github.com:wazuh/wazuh.git' 'wazuh'
+fetch = git fat
+
+[code/wazuh-docker]
+checkout = git clone 'git@github.com:wazuh/wazuh-docker.git' 'wazuh-docker'
+fetch = git fat
+
+[code/webogram]
+checkout = git clone 'git@github.com:waterkip/webogram.git' 'webogram'
+fetch = git fat
+
+[code/webservice-bitbucket]
+checkout = git clone 'git@github.com:waterkip/webservice-bitbucket.git' 'webservice-bitbucket'
+fetch = git fat
+
+[code/xmltwig]
+checkout = git clone 'git@github.com:waterkip/xmltwig.git' 'xmltwig'
+fetch = git fat
+
+[code/yapc-docker]
+checkout = git clone 'git@github.com:waterkip/docker-yapc.git' 'yapc-docker'
+fetch = git fat
+
+[code/zsh]
+checkout = git clone 'git://git.code.sf.net/p/zsh/code' 'zsh'
+fetch = git fat
+
+[.dotty]
+checkout = git clone 'git@gitlab.com:waterkip/dotty.git' '.dotty'
+fetch = git fat

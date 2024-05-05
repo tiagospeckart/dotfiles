@@ -1,0 +1,105 @@
+# top of custom snippets file
+priority 1
+
+extends monkey-c
+
+snippet tba "using as" bA
+using Toybox.$1 as $2;
+endsnippet
+
+snippet tb "using"
+using Toybox.$1;
+endsnippet
+
+snippet tbtest "Test methods" bA
+using OPN.Test.More as t;
+using Toybox.System as Sys;
+import Toybox.Lang;
+
+module $1 {
+
+  test$2
+}
+endsnippet
+
+snippet tblang "tb.Lang" bA
+import Toybox.Lang;
+endsnippet
+
+snippet tbui "tb.WatchUi" bA
+using Toybox.WatchUi as Ui;
+endsnippet
+
+snippet tbsys "tb.Sys" bA
+using Toybox.System as Sys;
+endsnippet
+
+snippet test "Test function"
+  (:test)
+  function $1(logger) {
+    // Test code here
+    return true;
+  }
+endsnippet
+
+snippet my "my to var"
+var $1;
+endsnippet
+
+snippet module "Module" bA
+module $1 {
+
+}
+endsnippet
+
+snippet class "Class"
+class $1 {
+  function initialize() {
+  }
+}
+endsnippet
+
+snippet classext "class extends" bA
+class $1 extends ${2} {
+  function initialize() {
+    $2.initialize();
+  }
+}
+endsnippet
+
+snippet pubf "Public function" bA
+public function $1 {
+  return;
+}
+endsnippet
+
+snippet protf "Protected function" bA
+protected function $1 {
+  return;
+}
+endsnippet
+
+snippet privf "Prive function" bA
+private function $1 {
+  return;
+}
+endsnippet
+
+snippet init "initialize"
+  function initialize($1) {
+    $2
+  }
+endsnippet
+
+snippet rezext "Rez.Menus extending"
+class $1 extends Rez.Menus.${2} {
+
+  function initialize() {
+    Rez.Menus.$2.initialize();
+  }
+
+}
+endsnippet
+
+
+# vim: ft=snippets
