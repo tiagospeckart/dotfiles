@@ -27,7 +27,7 @@ done
 stow stow \
   zsh \
   vim \
-  git
+  git 
 
 if [ ! -e $HOME/.env.local ] ; then
     cp $SELFDIR/env.local $HOME/.env.local

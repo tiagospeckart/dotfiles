@@ -14,3 +14,4 @@ cache/
 .zcompdump
 /apps/.ncftp/trace.*
 /apps/.local/*
+/zsh/.zsh/zsh-completions
