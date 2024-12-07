@@ -1,4 +1,9 @@
 
+# Exemplo de definição de função para load-and-bindkey
+function load-and-bindkey {
+    bindkey "$1" "$2"
+}
+
 load-and-bindkey '^y' insert-composed-char
 load-and-bindkey '^x' insert-unicode-char
 load-and-bindkey '^p' open-fuzzy-file

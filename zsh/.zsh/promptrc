@@ -1,4 +1,3 @@
-set_term_options
 watch=(notme root)
 
 # http://grml.org/zsh/zsh-lovers.html

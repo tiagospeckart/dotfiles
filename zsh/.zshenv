@@ -5,3 +5,4 @@ source $HOME/.profile
 #ZSHRC_BUG=44213
 
 #[[ ${ZSHRC_MINIMAL:-false} = false ]] && source $ZDOTDIR/autoloadrc
+. "$HOME/.cargo/env"

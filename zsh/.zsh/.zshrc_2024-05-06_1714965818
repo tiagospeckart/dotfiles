@@ -2,11 +2,6 @@
 # See https://htr3n.github.io/2018/07/faster-zsh/ for more information
 #zmodload zsh/zprof     # Enable this when you want to profile your zshrc
 
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
-# history
-HISTFILE=~/.zsh_history
-
 ZDOTDIR=$HOME/.zsh
 ZSHRC_MINIMAL=${ZSHRC_MINIMAL:-false}
 
@@ -32,32 +27,18 @@ setopt sh_word_split        # if you call func() $foo where foo="foo bar"
 setopt extendedglob         # see optionsrc for more information
 
 # uses sources, because xsource isn't loaded (yet)
-plug $ZDOTDIR/autoloadrc  # load all the autoloading things
+source $ZDOTDIR/autoloadrc  # load all the autoloading things
 
-plug $ZDOTDIR/optionsrc  # (un)setopt
-plug $ZDOTDIR/promptrc   # deal with completions and the likes
-plug $ZDOTDIR/keybindrc  # keybindings
-plug $ZDOTDIR/nameddirrc # named directories
-plug $HOME/.zsh/zsh-completions/src # zsh-extra completions
+xsource $ZDOTDIR/optionsrc  # (un)setopt
+xsource $ZDOTDIR/promptrc   # deal with completions and the likes
+xsource $ZDOTDIR/keybindrc  # keybindings
+xsource $ZDOTDIR/nameddirrc # named directories
 
-plug $HOME/.aliasrc      # aliases
-plug $HOME/.env.local    # local environment
+xsource $HOME/.aliasrc      # aliases
+xsource $HOME/.env.local    # local environment
 
-plug $ZDOTDIR/endzshrc
+xsource $ZDOTDIR/endzshrc
+
+fpath=($HOME/.zsh/zsh-completions/src $fpath)
 
 # vim: filetype=zsh syntax=zsh
-
-# Load bash completion functions
-autoload -Uz +X compinit && compinit
-autoload -Uz +X bashcompinit && bashcompinit
-
-# Aliases
-alias vim="nvim"
-alias vi="nvim"
-alias k="kubectl"
-
-export LIBVA_DRIVER_NAME=i965
-export LIBVA_DRIVERS_PATH=/usr/lib/dri
-
-# asdf
-. $HOME/.asdf/asdf.sh

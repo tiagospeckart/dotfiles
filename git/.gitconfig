@@ -1,6 +1,7 @@
 [user]
   name = Tiago Martins Speckart
   email = tiagospeckart@gmail.com
+	signingkey = F7B5BF851565ECAA3B8868CA098B1328644C6F46
 
 [core]
   longpaths = true
@@ -8,7 +9,7 @@
   filemode = true
   bare = false
   logallrefupdates = true
-  editor = vim-git
+	editor = nvim
 
 [log]
     mailmap = true
@@ -102,6 +103,7 @@
 
 [commit]
   template = /usr/local/share/bum/default-commit-message
+	gpgSign = true
 
 [sendemail]
   confirm = auto
@@ -139,3 +141,9 @@
 [includeIf "gitdir:~/code/perl/net-saml-group/"]
   path = ~/.config/git/net-saml.config
 
+[credential]
+	helper = 
+	helper = /usr/bin/git-credential-manager
+	credentialStore = gpg
+[credential "https://dev.azure.com"]
+	useHttpPath = true

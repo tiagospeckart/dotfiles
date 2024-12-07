@@ -63,3 +63,4 @@ export DEBFULLNAME DEBEMAIL \
 export BUILDKIT_PROGRESS=1
 
 # vim: ft=sh
+. "$HOME/.cargo/env"
